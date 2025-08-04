@@ -4,9 +4,16 @@
   <groupId>de.io.github.tobyfm</groupId>
   <artifactId>testmodule</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <name>testmodule</name>
   <url>http://maven.apache.org</url>
+  <distributionManagement>
+      <repository>
+          <id>github</id>
+          <name>maven package demo tes</name>
+          <url>https://maven.pkg.github.com/Toby-Fm/java-package-demo</url>
+      </repository>
+  </distributionManagement>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
