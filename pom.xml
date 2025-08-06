@@ -1,19 +1,32 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.io.github.tobyfm</groupId>
   <artifactId>testmodule</artifactId>
+  <version>2.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <version>1.0.0-SNAPSHOT</version>
   <name>testmodule</name>
   <url>http://maven.apache.org</url>
+
+  <!-- GITEA Deployment-Ziel -->
   <distributionManagement>
-      <repository>
-          <id>github</id>
-          <name>maven package demo tes</name>
-          <url>https://maven.pkg.github.com/Toby-Fm/java-package-demo</url>
-      </repository>
+    <repository>
+      <id>gitea</id>
+      <name>Gitea Maven Repository</name>
+      <url>http://192.168.1.3:3000/api/packages/PnT-Software/maven</url>
+    </repository>
   </distributionManagement>
+
+  <!-- Nur wenn du *abhängige* Pakete aus Gitea laden willst -->
+  <repositories>
+    <repository>
+      <id>gitea</id>
+      <url>http://192.168.1.3:3000/api/packages/PnT-Software/maven</url>
+    </repository>
+  </repositories>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -23,3 +36,4 @@
     </dependency>
   </dependencies>
 </project>
+
